@@ -1,5 +1,11 @@
 <template name="markershow">
-  markershow
-  {{this.properties.title}}
+  {{this.properties.title}} <br>
   {{this.properties.description}}
+  <div class="ui bulleted list">
+    {{#each comments}}
+    <div>
+      {{this}}
+    </div>
+    {{/each}}
+  </div>
 </template>

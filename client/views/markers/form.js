@@ -20,7 +20,8 @@ Template.markerform.events({
           "marker-color": "#fc4353",
           "marker-size": "large",
           "marker-symbol": "pitch"
-        }
+        },
+        "comments": ["Where are you?","Very nice how much?","Debo stole my bike :/"]
       })
     })
 
