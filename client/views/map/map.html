@@ -1,0 +1,29 @@
+<template name="map">
+  <!-- javascript and css in html lol need to fix -->
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:25px; bottom:0; width:100%; }
+  </style>
+
+  {{> markerform}}
+
+  <div id="map"></div>
+
+  <script>
+    // todo - center map to geolocation coords
+    L.mapbox.accessToken = 'pk.eyJ1IjoianVsc2FudGFuYSIsImEiOiIxRzM0SmhNIn0.0ZzDMXxGti5sXpTwai0TXA';
+    var map = L.mapbox.map('map', 'julsantana.lia8ji15').setView([37.7833, -122.4167], 12)
+    // primary layer we will be working with
+    var markerLayer = L.mapbox.featureLayer().addTo(map);
+    markerLayer.on('click', function(e) {
+        map.panTo(e.layer.getLatLng());
+    });
+    markerLayer.on('mouseover', function(e) {
+      e.layer.openPopup();
+    });
+    markerLayer.on('mouseout', function(e) {
+      console.log(e);
+      e.layer.closePopup();
+    });
+  </script>
+</template>
