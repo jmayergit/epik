@@ -1,0 +1,13 @@
+<template name="markercommentsindex">
+  <br>Markers Comments Index
+  <div class="ui bulleted list">
+    <!-- this = comments or this = ['comment1','comment2',etc.] -->
+    {{#each this}}
+    <div>
+      <!-- this is now = comments[index] -->
+      {{this}}
+    </div>
+    {{/each}}
+  </div>
+  {{> commentform}}
+</template>

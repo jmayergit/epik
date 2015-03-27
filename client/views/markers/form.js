@@ -21,7 +21,7 @@ Template.markerform.events({
           "marker-size": "large",
           "marker-symbol": "pitch"
         },
-        "comments": ["Where are you?","Very nice how much?","Debo stole my bike :/"]
+        "comments": []
       })
     })
 

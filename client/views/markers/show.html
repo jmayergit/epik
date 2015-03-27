@@ -1,11 +1,7 @@
 <template name="markershow">
   {{this.properties.title}} <br>
   {{this.properties.description}}
-  <div class="ui bulleted list">
-    {{#each comments}}
-    <div>
-      {{this}}
-    </div>
-    {{/each}}
-  </div>
+  <!-- set data context of sub-index to comments -->
+  {{> markercommentsindex comments}}
+
 </template>
