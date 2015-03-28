@@ -2,6 +2,8 @@
   {{this.properties.title}} <br>
   {{this.properties.description}}
   <!-- set data context of sub-index to comments -->
-  {{> markercommentsindex comments}}
-
+  {{#each comments}}
+    {{> commentshow}}
+  {{/each}}
+  {{> commentform}}
 </template>

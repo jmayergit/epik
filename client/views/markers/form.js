@@ -21,7 +21,8 @@ Template.markerform.events({
           "marker-size": "large",
           "marker-symbol": "pitch"
         },
-        "comments": []
+        "comments": [],
+        "createdAt": new Date()
       })
     })
 

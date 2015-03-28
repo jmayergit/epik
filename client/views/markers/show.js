@@ -1,6 +1,5 @@
 Template.markershow.helpers({
   comments: function() {
-    var result = _.values(this.comments);
-    return result;
+    return CommentsCollection.find({marker_id: this._id});
   }
 });

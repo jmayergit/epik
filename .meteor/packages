@@ -5,6 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
-insecure
 iron:router
 semantic:ui-css
+accounts-base
+accounts-ui
+accounts-password
