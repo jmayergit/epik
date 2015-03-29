@@ -16,8 +16,7 @@
     markerLayer.on('click', function(e) {
       var marker_id = e.target._geojson[0]._id
       map.panTo(e.layer.getLatLng());
-      // redirect on click after deploy
-      // window.location.href = 'domain/epic/' + marker_id;
+      window.location.replace(e.layer.feature.properties.url);
     });
     markerLayer.on('mouseover', function(e) {
       e.layer.openPopup();

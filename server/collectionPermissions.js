@@ -1,6 +1,10 @@
 MarkersCollection.allow({
   insert: function(userID, doc) {
     return true;
+  },
+
+  update: function(userID, doc) {
+    return true;
   }
 })
 

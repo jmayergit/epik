@@ -20,11 +20,18 @@ Template.markerform.events({
           "marker-color": "#fc4353",
           "marker-size": "large",
           "marker-symbol": "pitch",
+          url: ""
         },
         comments: [],
         createdAt: new Date()
       })
+
+      // need to retroactively add show page since it is dependant on id
+
+      MarkersCollection.update({_id: markerId}, {$set: {'properties.url': 'epik.meteor.com/epic/' + markerId}} )
     })
+
+
 
 
   }
