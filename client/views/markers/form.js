@@ -28,7 +28,7 @@ Template.markerform.events({
 
       // need to retroactively add show page since it is dependant on id
 
-      MarkersCollection.update({_id: markerId}, {$set: {'properties.url': markerId}} )
+      MarkersCollection.update({_id: markerId}, {$set: {'properties.url': '/epic/' + markerId}} )
     })
 
 
