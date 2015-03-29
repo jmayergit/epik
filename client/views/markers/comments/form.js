@@ -10,7 +10,7 @@ Template.commentform.events({
       return baseURI.match(reID)[0];
     }
 
-    var comment = $('input').val();
+    var comment = event.target[0].value
     var marker_id = getMarkerID();
     var user_id = Meteor.userId();
 
@@ -21,6 +21,9 @@ Template.commentform.events({
       createdAt: new Date()
     })
 
-    MarkersCollection.update({_id: marker_id}, {$push: {'comments': comment_id}});
+    // MarkersCollection.update({_id: marker_id}, {$push: {'comments': comment_id}});
+    // ^ might want to return to this but not needed and also would need an allow
+    // edit: actually probably won't it causes an x to appear when the comment fails
+    // edit2: no i'm not sure anymore
   }
 });

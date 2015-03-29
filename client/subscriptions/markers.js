@@ -1,8 +1,8 @@
 Meteor.subscribe('markers');
 
 // when Collection.find() changes this code is run
-Deps.autorun(function() {
-  console.log(Tracker.active);
+Deps.autorun(function(comp) {
+  // console.log(Tracker.active);
   console.log("grabbed " + MarkersCollection.find().count() + " markers");
   // setGeoJSON expects an array of features
   if( typeof markerLayer === 'object') {
@@ -24,3 +24,21 @@ Deps.autorun(function() {
     );
   }
 })
+
+// Deps.autorun(function(comp) {
+//   if( comp.firstRun ) {
+//     setTimeout( function() {
+//       var geoJsonArr = []
+//       MarkersCollection.find().forEach(function (marker) {
+//         geoJsonArr.push(marker);
+//       });
+//       markerLayer.setGeoJSON(geoJsonArr);
+//     }, 1000);
+//   }else {
+//     var geoJsonArr = []
+//     MarkersCollection.find().forEach(function (marker) {
+//       geoJsonArr.push(marker);
+//     });
+//     markerLayer.setGeoJSON(geoJsonArr);
+//   }
+// });

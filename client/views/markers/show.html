@@ -1,9 +1,28 @@
 <template name="markershow">
-  {{this.properties.title}} <br>
-  {{this.properties.description}}
   <!-- set data context of sub-index to comments -->
-  {{#each comments}}
-    {{> commentshow}}
-  {{/each}}
-  {{> commentform}}
+  <div class="sixteen wide column">
+
+
+    <div class="sixteen wide column center aligned">
+
+      <h3>{{this.properties.title}}</h3>
+      <h4>{{this.properties.description}}</h4><br><br>
+
+
+    </div>
+
+      {{#each comments}}
+
+          <div class="sixteen wide column">
+
+            {{> commentshow}}
+
+          </div>
+
+      {{/each}}
+
+
+      {{> commentform}}
+
+  </div>
 </template>

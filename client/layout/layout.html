@@ -1,3 +1,37 @@
 <template name="layout">
-  {{> yield}}
+
+  <div class="ui grid">
+
+      <div class="sixteen wide column">
+
+            <div class="ui inverted menu">
+
+                  <div class="item">
+                    {{> loginButtons}}
+                  </div>
+
+                  {{#if currentUser}}
+
+                    <div class="item">
+                      {{> markerform}}
+                    </div>
+
+                  {{/if}}
+
+            </div>
+      </div>
+
+
+      <!-- <div class="sixteen wide column"> -->
+
+            {{#if currentUser }}
+              {{> yield}}
+            {{/if}}
+
+      <!-- </div> -->
+
+
+  </div>
+
+
 </template>

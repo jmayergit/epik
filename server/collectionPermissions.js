@@ -1,3 +1,9 @@
+MarkersCollection.allow({
+  insert: function(userID, doc) {
+    return true;
+  }
+})
+
 CommentsCollection.allow({
   insert: function(userID, doc) {
     return true;
