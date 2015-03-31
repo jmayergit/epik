@@ -25,5 +25,6 @@ Template.commentform.events({
     // ^ might want to return to this but not needed and also would need an allow
     // edit: actually probably won't it causes an x to appear when the comment fails
     // edit2: no i'm not sure anymore
+    event.target.reset();
   }
 });
