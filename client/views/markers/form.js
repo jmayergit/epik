@@ -4,10 +4,21 @@ Template.markerform.events({
     event.preventDefault();
     var title = $(event.target).find('input[name=title]').val();
     var description = $(event.target).find('input[name=description]').val();
+    var serverTime = null
+
+    Meteor.call("getServerTime", function(error, result) {
+      serverTime = result
+    });
+
     // console.log(title);
     // console.log(description);
 
     navigator.geolocation.getCurrentPosition(function(position){
+
+
+
+      console.log(serverTime);
+
       var markerId = MarkersCollection.insert({
         type: "Feature",
         geometry: {
@@ -23,7 +34,7 @@ Template.markerform.events({
           url: ""
         },
         comments: [],
-        createdAt: new Date()
+        createdAt: serverTime
       })
 
       // need to retroactively add show page since it is dependant on id
@@ -34,5 +45,9 @@ Template.markerform.events({
 
 
     event.target.reset();
+
+    setTimeout( function() {
+
+    })
   }
 })
