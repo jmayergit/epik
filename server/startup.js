@@ -1,3 +1,3 @@
-Meteor.startup(function() {
-  MarkersCollection.remove({});
-});
+// Meteor.startup(function() {
+//   MarkersCollection.remove({});
+// });

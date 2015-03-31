@@ -11,18 +11,30 @@
 
     </div>
 
-      {{#each comments}}
 
-          <div class="sixteen wide column">
 
-            {{> commentshow}}
 
+    <div class="ui grid center aligned">
+
+          <div class="eight wide column left aligned">
+
+                {{#each comments}}
+
+
+
+                      <div class="comment">{{> commentshow}}</div>
+
+
+
+                {{/each}}
+
+          </div><br>
+
+          <div class="eight wide column">
+            {{> commentform}}
           </div>
 
-      {{/each}}
-
-
-      {{> commentform}}
+    </div>
 
   </div>
 </template>

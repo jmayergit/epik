@@ -1,3 +1,7 @@
 input {
   color: blue;
 }
+
+.comment {
+  padding-left: 5px;
+}
