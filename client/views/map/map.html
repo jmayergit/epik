@@ -24,5 +24,11 @@
     markerLayer.on('mouseout', function(e) {
       e.layer.closePopup();
     });
+
+    var geoJsonArr = []
+    MarkersCollection.find().forEach(function (marker) {
+      geoJsonArr.push(marker);
+    });
+    markerLayer.setGeoJSON(geoJsonArr);
   </script>
 </template>

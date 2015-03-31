@@ -33,6 +33,6 @@ Template.markerform.events({
 
 
 
-
+    event.target.reset();
   }
 })
