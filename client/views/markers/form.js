@@ -5,6 +5,7 @@ Template.markerform.events({
     var title = $(event.target).find('input[name=title]').val();
     var description = $(event.target).find('input[name=description]').val();
     var serverTime = null
+    var user_id = Meteor.userId();
 
     Meteor.call("getServerTime", function(error, result) {
       serverTime = result
@@ -29,6 +30,7 @@ Template.markerform.events({
           "marker-symbol": "pitch",
           url: ""
         },
+        user_id: user_id,
         comments: [],
         createdAt: serverTime,
         //   ------ changes to countdown must reflect changes in server startup

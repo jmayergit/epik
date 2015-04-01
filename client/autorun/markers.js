@@ -1,6 +1,7 @@
 function setGeoJson() {
   var geoJson = []
-  MarkersCollection.find().forEach(function (marker) {
+  var id = Meteor.userId();
+  MarkersCollection.find({'user_id': id}).forEach(function (marker) {
     geoJson.push(marker);
   })
   markerLayer.setGeoJSON(geoJson)

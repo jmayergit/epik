@@ -13,6 +13,8 @@
     var map = L.mapbox.map('map', 'julsantana.lia8ji15').setView([37.7833, -122.4167], 12)
     // primary layer we will be working with
     var markerLayer = L.mapbox.featureLayer().addTo(map);
+
+
     markerLayer.on('click', function(e) {
       var marker_id = e.target._geojson[0]._id
       map.panTo(e.layer.getLatLng());
@@ -25,8 +27,10 @@
       e.layer.closePopup();
     });
 
+
+    // keep for new page loads
     var geoJsonArr = []
-    MarkersCollection.find().forEach(function (marker) {
+    MarkersCollection.find({'user_id': Meteor.userId()}).forEach(function (marker) {
       geoJsonArr.push(marker);
     });
     markerLayer.setGeoJSON(geoJsonArr);
