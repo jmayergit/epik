@@ -15,10 +15,6 @@ Template.markerform.events({
 
     navigator.geolocation.getCurrentPosition(function(position){
 
-
-
-      console.log(serverTime);
-
       var markerId = MarkersCollection.insert({
         type: "Feature",
         geometry: {
@@ -34,7 +30,8 @@ Template.markerform.events({
           url: ""
         },
         comments: [],
-        createdAt: serverTime
+        createdAt: serverTime,
+        countdown: "120"
       })
 
       // need to retroactively add show page since it is dependant on id
@@ -45,9 +42,6 @@ Template.markerform.events({
 
 
     event.target.reset();
-
-    setTimeout( function() {
-
-    })
   }
+
 })
