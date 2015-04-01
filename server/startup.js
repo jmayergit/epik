@@ -6,16 +6,15 @@ Meteor.startup( function() {
     MarkersCollection.find().forEach( function(marker) {
       elapsed = currentTime.getTime() - marker.createdAt.getTime();
       // console.log('Elapsed time: ' + elapsed);
-      if( elapsed > 120000 ) {
+      if( elapsed > 590000 ) {
         MarkersCollection.remove(marker);
       }else {
-        console.log("marker's countdown: " + marker.countdown);
-        var count = marker.countdown;
-        count -= 10;
-        count.toString();
-        MarkersCollection.update({_id:marker._id}, {$set:{countdown:count}})
+        var newCountdown = marker.countdown;
+        newCountdown -= 1;
+        newCountdown.toString();
+        MarkersCollection.update({_id:marker._id}, {$set:{countdown:newCountdown}})
       }
     })
-  }, 10000)
+  }, 60000)
 
 });

@@ -31,12 +31,14 @@ Template.markerform.events({
         },
         comments: [],
         createdAt: serverTime,
-        countdown: "120"
+        //   ------ changes to countdown must reflect changes in server startup
+        countdown: "10"
       })
 
       // need to retroactively add show page since it is dependant on id
 
       MarkersCollection.update({_id: markerId}, {$set: {'properties.url': '/epic/' + markerId}} )
+
     })
 
 
