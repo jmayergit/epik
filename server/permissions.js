@@ -14,13 +14,18 @@ CommentsCollection.allow({
   },
 
   remove: function(userID, doc) {
-    return true;
-  }
-});
+    return userID === doc.user_id;
+  },
 
-CommentsCollection.deny({
-  remove: function(userID, doc) {
-    return userID != doc.user_id;
+  update: function(userID, doc) {
+    disallowed = doc.likes.ids;
+    for( var i = 0; i < disallowed.length; i++) {
+      if( userID === disallowed[i] ) {
+        return false;
+      }
+    }
+
+    return true;
   }
 });
 

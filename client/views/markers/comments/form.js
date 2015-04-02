@@ -18,7 +18,13 @@ Template.commentform.events({
       comment: comment,
       marker_id: marker_id,
       user_id: user_id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      //     n    userId's
+      //e.g. [2, ['LCKJisldkjf','aalsdkfjlaksd']]
+      likes: {
+        num: 0,
+        ids: []
+      }
     })
 
     // MarkersCollection.update({_id: marker_id}, {$push: {'comments': comment_id}});
