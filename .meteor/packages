@@ -10,3 +10,5 @@ semantic:ui-css
 accounts-base
 accounts-ui
 accounts-password
+cfs:standard-packages
+cfs:gridfs

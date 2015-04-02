@@ -1,0 +1,11 @@
+<template name="markerimageshow">
+  <div class="grid ui">
+    <div class="sixteen wide column">
+      markerimageshow
+      {{#each images}}
+        URL: {{this.url}}
+        <a href="{{this.url}}"><img src="{{this.url}}"/></a>
+      {{/each}}
+    </div>
+  </div>
+</template>

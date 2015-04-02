@@ -23,3 +23,17 @@ CommentsCollection.deny({
     return userID != doc.user_id;
   }
 });
+
+Images.allow({
+  insert: function(userID, doc) {
+    return true;
+  },
+
+  update: function(userID, doc) {
+    return true;
+  },
+
+  download: function(userID, doc) {
+    return true;
+  }
+});

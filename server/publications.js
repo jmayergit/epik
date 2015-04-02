@@ -5,3 +5,7 @@ Meteor.publish('markers', function() {
 Meteor.publish('comments', function() {
   return CommentsCollection.find();
 });
+
+Meteor.publish('images', function() {
+  return Images.find();
+})
