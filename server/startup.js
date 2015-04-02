@@ -1,8 +1,10 @@
-// markers have a finite life, removed after expiration
-
 Meteor.startup( function() {
   Meteor.setInterval( function() {
+
+
+    // markers have a finite life, removed after expiration
     var currentTime = new Date;
+
     MarkersCollection.find().forEach( function(marker) {
       elapsed = currentTime.getTime() - marker.createdAt.getTime();
       // console.log('Elapsed time: ' + elapsed);
@@ -15,6 +17,8 @@ Meteor.startup( function() {
         MarkersCollection.update({_id:marker._id}, {$set:{countdown:newCountdown}})
       }
     })
+
+
   }, 60000)
 
 });
