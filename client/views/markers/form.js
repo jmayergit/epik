@@ -6,6 +6,10 @@ Template.markerform.events({
     var title = $(event.target).find('input[name=title]').val();
     var description = $(event.target).find('input[name=description]').val();
     var user_id = Meteor.userId();
+    // set on input change hopefully in time
+    var photo_id = Session.get('fileObj_id');
+    console.log('ADD MARKER PHOTO ID');
+    console.log(photo_id);
     // set on login
     var location = Session.get('user_location');
     // arbitrarily reset coords here, probably needs elsewhere
@@ -34,8 +38,8 @@ Template.markerform.events({
         },
 
         user_id: user_id,
-        comments: [],
         createdAt: result,
+        photo_id: photo_id,
         // createdAt: new Date(),
         //   ------ changes to countdown must reflect changes in server startup
         //   1. Server runs task every 60000 milsec ( 1 minute )
@@ -56,19 +60,21 @@ Template.markerform.events({
   },
 
 
-  'something for image': function(event, template) {
+  'change input.myFileInput': function(event, template) {
 
-    // var files = event.target[2].files;
-    //
-    // for( var i = 0; i < files.length; i ++) {
-    //   var image = Images.insert(files[i], function(err, fileObj) {
-    //
-    //   })
-    // }
-    //
-    // // console.log(image._id);
-    // console.log('Get file record: ');
-    // console.log(image.getFileRecord());
+    var files = event.target.files;
+
+    for( var i = 0; i < files.length; i ++) {
+      var fileObj = Images.insert(files[i], function(err, fileObj) {
+
+      })
+    }
+
+    var fileObj_id = fileObj._id
+
+
+
+    Session.set('fileObj_id',fileObj_id);
 
   }
 
