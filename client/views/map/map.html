@@ -26,27 +26,31 @@
     });
 
     markerLayer.on('mouseout', function(e) {
-      // e.layer.closePopup();
+      e.layer.closePopup();
     });
 
-    markerLayer.on('layeradd', function(e) {
-      var marker = e.layer;
-      var feature = marker.feature;
-      var image = feature.photo_id;
-
-      var popupContent = '<div class="popup">' +
-                          '<h2>Pops Ups</h2>' +
-                         '</div>';
 
 
-
-      marker.bindPopup('<h2>Pops Up</h2>');
-    });
+    // popop content no display
+    // markerLayer.on('layeradd', function(e) {
+    //   var marker = e.layer;
+    //   var feature = marker.feature;
+    //   var image = feature.photo_id;
+    //
+    //   var popupContent = '<div class="popup">' +
+    //                       '<h2>Pops Ups</h2>' +
+    //                      '</div>';
+    //
+    //
+    //
+    //   marker.bindPopup('<h2>Pops Up</h2>');
+    // });
 
 
     // keep for new page loads
     var geoJsonArr = []
-    MarkersCollection.find({'user_id': Meteor.userId()}).forEach(function (marker) {
+    /// {'user_id': Meteor.userId()}
+    MarkersCollection.find().forEach(function (marker) {
       geoJsonArr.push(marker);
     });
     markerLayer.setGeoJSON(geoJsonArr);
