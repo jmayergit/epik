@@ -2,7 +2,7 @@
   <!-- javascript and css in html lol need to fix -->
   <style>
     body { margin:0px; padding:0px; }
-    #map { position:absolute; top:50px; bottom:0px; width:100%; right:0px; left:0px; }
+    #map { position:absolute; top:57px; bottom:0px; width:100%; right:0px; left:0px; }
   </style>
 
   <div id="map"></div>
@@ -20,11 +20,27 @@
       map.panTo(e.layer.getLatLng());
       window.location.replace(e.layer.feature.properties.url);
     });
+
     markerLayer.on('mouseover', function(e) {
       e.layer.openPopup();
     });
+
     markerLayer.on('mouseout', function(e) {
-      e.layer.closePopup();
+      // e.layer.closePopup();
+    });
+
+    markerLayer.on('layeradd', function(e) {
+      var marker = e.layer;
+      var feature = marker.feature;
+      var image = feature.photo_id;
+
+      var popupContent = '<div class="popup">' +
+                          '<h2>Pops Ups</h2>' +
+                         '</div>';
+
+
+
+      marker.bindPopup('<h2>Pops Up</h2>');
     });
 
 

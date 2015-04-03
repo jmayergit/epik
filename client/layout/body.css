@@ -7,6 +7,22 @@ input {
   padding-bottom: 15px;
 }
 
+.ui.menu {
+  border-radius: 0rem;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  opacity: 0;
+}
+
+.mapbox-logo {
+  opacity: 0;
+}
+
+.myFileInput {
+  /*color: red;*/
+}
+
 .leaflet-marker-icon {
   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 3s; /* Firefox < 16 */
