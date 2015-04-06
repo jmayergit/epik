@@ -13,12 +13,19 @@
                   {{#if currentUser}}
 
                     <div class="item">
-                      <a href="{{pathFor route="home"}}">Home</a>
+                      <a href="{{pathFor route="home"}}">Map</a>
                     </div>
 
-                    <div class="item">
-                      {{> markerform}}
+                    <div class="ui simple dropdown item">
+                      Upload
+                      <i class="dropdown icon"></i>
+                        {{> markerform}}
                     </div>
+
+                    <!-- <div class="item" id="item">
+                      <input type="button" class="wrapper" name="some_name" value="">
+                      {{> markerform}}
+                    </div> -->
 
                   {{/if}}
 

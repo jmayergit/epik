@@ -2,7 +2,7 @@
   <!-- javascript and css in html lol need to fix -->
   <style>
     body { margin:0px; padding:0px; }
-    #map { position:absolute; top:57px; bottom:0px; width:100%; right:0px; left:0px; }
+    #map { position:absolute; top:40px; bottom:0px; width:100%; right:0px; left:0px; }
   </style>
 
   <div id="map"></div>
@@ -54,5 +54,11 @@
       geoJsonArr.push(marker);
     });
     markerLayer.setGeoJSON(geoJsonArr);
+
+
+    var randoMarker = MarkersCollection.findOne();
+    if( randoMarker ) {
+      MarkersCollection.update({_id:randoMarker._id},{$set:{'observe':'true'}})
+    }
   </script>
 </template>

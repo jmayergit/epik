@@ -1,10 +1,20 @@
 <template name="markerform">
-  <form class="add-marker-form ui">
-    <div class="field">
-      <input type="text" name="title" id="title" value="">
-      <input type="text" name="description" id="description" value="">
-      <input type="file" name="markerImage" class="myFileInput">
-      <button class="add-marker-button ui secondary button">Upload epik</button>
-    </div>
-  </form>
+
+  <div class="menu">
+
+        <form class="add-marker-form">
+
+        <div class="item" id="input-wrapper">
+          <input type="text" class="input-cover" name="some_name" value="No Picture Selected" size="35">
+          <input type="file" name="markerImage" class="myFileInput">
+        </div>
+
+        <div class="item"><input type="text" name="title" id="title" placeholder="Title"></div>
+
+        <div class="item"><input type="text" name="description" id="description" placeholder="Short Description"></div>
+
+        <button class="add-marker-button ui secondary button">Create Epik</button>
+
+        </form>
+  </div>
 </template>

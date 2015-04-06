@@ -1,7 +1,11 @@
+Template.markerform.helpers({
+})
+
 Template.markerform.events({
   'submit .add-marker-form': function(event, template) {
 
     event.preventDefault();
+
 
     var title = $(event.target).find('input[name=title]').val();
     var description = $(event.target).find('input[name=description]').val();
@@ -45,7 +49,8 @@ Template.markerform.events({
         //   1. Server runs task every 60000 milsec ( 1 minute )
         //   2. Countdown expressed in minutes ( 10000 milsec)
         //   3. Countdown decremented by 1 every task ( 1 minute = 60000)
-        countdown: "10"
+        countdown: "10",
+        observe: "false"
       })
 
       // need to retroactively add show page url since it is dependant on id
@@ -75,6 +80,10 @@ Template.markerform.events({
 
 
     Session.set('fileObj_id',fileObj_id);
+
+
+    /// change input cover value to refelect real input value
+    $('.input-cover').val($('.myFileInput').val())
 
   }
 
