@@ -5,8 +5,8 @@ Template.commentform.events({
     function getMarkerID() {
       var reID = /[a-zA-Z0-9]{15,25}/;
       var baseURI = event.target.baseURI;
-      console.log('----base uri------');
-      console.log(baseURI);
+      // console.log('----base uri------');
+      // console.log(baseURI);
       return baseURI.match(reID)[0];
     }
 

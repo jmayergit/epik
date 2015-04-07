@@ -4,6 +4,12 @@ MarkersCollection.allow({
   },
 
   update: function(userID, doc) {
+    var disallowed = doc.likes.ids;
+    for( var i = 0; i < disallowed.length; i++){
+      if( userID === disallowed[i]){
+        return false;
+      };
+    };
     return true;
   }
 })
@@ -18,7 +24,7 @@ CommentsCollection.allow({
   },
 
   update: function(userID, doc) {
-    disallowed = doc.likes.ids;
+    var disallowed = doc.likes.ids;
     for( var i = 0; i < disallowed.length; i++) {
       if( userID === disallowed[i] ) {
         return false;

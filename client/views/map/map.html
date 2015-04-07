@@ -15,6 +15,7 @@
     var markerLayer = L.mapbox.featureLayer().addTo(map);
 
 
+
     markerLayer.on('click', function(e) {
       var marker_id = e.target._geojson[0]._id
       map.panTo(e.layer.getLatLng());
@@ -31,22 +32,6 @@
 
 
 
-    // popop content no display
-    // markerLayer.on('layeradd', function(e) {
-    //   var marker = e.layer;
-    //   var feature = marker.feature;
-    //   var image = feature.photo_id;
-    //
-    //   var popupContent = '<div class="popup">' +
-    //                       '<h2>Pops Ups</h2>' +
-    //                      '</div>';
-    //
-    //
-    //
-    //   marker.bindPopup('<h2>Pops Up</h2>');
-    // });
-
-
     // keep for new page loads
     var geoJsonArr = []
     /// {'user_id': Meteor.userId()}
@@ -55,10 +40,5 @@
     });
     markerLayer.setGeoJSON(geoJsonArr);
 
-
-    var randoMarker = MarkersCollection.findOne();
-    if( randoMarker ) {
-      MarkersCollection.update({_id:randoMarker._id},{$set:{'observe':'true'}})
-    }
   </script>
 </template>

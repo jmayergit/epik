@@ -2,7 +2,7 @@ function updateMap() {
   var geodata = [];
 
   MarkersCollection.find().forEach( function(marker) {
-    console.log(marker);
+    // console.log(marker);
     geodata.push(marker);
   });
 
@@ -12,11 +12,11 @@ function updateMap() {
 MarkersCollection.find().observe({
   added: function(document) {
     updateMap();
-    console.log("ADDED");
+    // console.log("ADDED");
   },
   changed: function(newdoc, olddoc) {
     updateMap();
-    console.log("CHANGED");
+    // console.log("CHANGED");
   },
   removed: function(olddoc) {
     updateMap();
