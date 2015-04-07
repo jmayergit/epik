@@ -8,6 +8,7 @@ Template.commentshow.events({
     }
     if( clientSideCheck(commentUserId, userId) ){
       if( CommentsCollection.remove({_id: this._id}) ) {
+        
         $('#bottom').animate({
          top: "-=30"
         }, 500, function() {});
