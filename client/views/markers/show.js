@@ -1,9 +1,12 @@
 Template.markershow.rendered = function(){
     // var top = CommentsCollection.find({marker_id: this._id}).count();
     var marker_id = this.data._id;
+    console.log('Marker ID: ' + marker_id);
     var commentNum = CommentsCollection.find({marker_id: marker_id}).count();
+    console.log('Number of comments: ' + commentNum);
     // javascript animation increment
     var spacing = commentNum * 30;
+    console.log('Spacing: ' + spacing);
     $('#bottom').css('top','+=' + spacing);
 }
 
