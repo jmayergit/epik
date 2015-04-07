@@ -1,3 +1,12 @@
+Template.markershow.rendered = function(){
+    // var top = CommentsCollection.find({marker_id: this._id}).count();
+    var marker_id = this.data._id;
+    var commentNum = CommentsCollection.find({marker_id: marker_id}).count();
+    // javascript animation increment
+    var spacing = commentNum * 30;
+    $('#bottom').css('top','+=' + spacing);
+}
+
 Template.markershow.helpers({
   comments: function() {
     return CommentsCollection.find({marker_id: this._id});
@@ -8,16 +17,12 @@ Template.markershow.events({
   'click i.thumbs.up.icon': function(event, template){
     // console.log(event);
     // console.log(this);
-    var id = Meteor.userId();
     var ids = this.likes.ids;
     var _this = this;
 
     function clientSideCheck(id, ids){
       for( var i = 0; i < ids.length; i++){
-        console.log(id);
-        console.log(ids[i]);
         if( id === ids[i] ){
-          console.log('false');
           return false;
         };
       };
@@ -33,7 +38,7 @@ Template.markershow.events({
         }
       });
     }else{
-      console.log('disallowed');
+      // console.log('disallowed');
     };
   }
 });

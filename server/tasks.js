@@ -19,10 +19,18 @@ Meteor.startup( function() {
       }else {
         var newCountdown = marker.countdown -1;
         var marker_color = colors[newCountdown];
+        var _marker = marker
         // console.log('Marker Color:' + marker_color);
-        MarkersCollection.update(marker, {$set:{'properties.marker-color': marker_color}});
-        MarkersCollection.update(marker, {$set:{countdown : newCountdown}});
-
+        MarkersCollection.update({_id: marker._id}, {$set:{countdown : newCountdown}}, function(error, num){
+          // console.log(error);
+          // console.log(num);
+          if( num ){
+            MarkersCollection.update({_id:_marker._id}, {$set:{'properties.marker-color': marker_color}}, function(error, num){
+              // console.log(error);
+              // console.log(num);
+            });
+          }
+        });
       }
     })
     console.log('TASK');

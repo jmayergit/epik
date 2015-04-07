@@ -5,7 +5,11 @@ input {
 .comment {
   padding-top: 10px;
   padding-left: 5px;
-  padding-bottom: 15px;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s; /* Firefox < 16 */
+  -ms-animation: fadein 3s; /* Internet Explorer */
+  -o-animation: fadein 3s; /* Opera < 12.1 */
+  animation: fadein 3s;
 }
 
 .invalid-input {
@@ -19,6 +23,22 @@ input {
   animation: fadein 3s;
 }
 
+.ui[class*="center aligned"].grid, .ui[class*="center aligned"].grid > .row > .column, .ui[class*="center aligned"].grid > .column, .ui.grid > [class*="center aligned"].row > .column {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+#top {
+  z-index: 1;
+}
+
+#bottom {
+  z-index: 0;
+  top: 0;
+}
 .ui.menu .dropdown.item .menu {
   background: rgba(0, 0, 0, 0);
   border-style: solid;

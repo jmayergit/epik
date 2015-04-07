@@ -17,7 +17,7 @@
 
     <div class="ui grid center aligned">
 
-          <div class="eight wide column left aligned">
+          <div class="eight wide column left aligned" id="top">
 
                 {{#each comments}}
 
@@ -31,13 +31,15 @@
 
           </div><br>
 
-          <div class="eight wide column">
-            <div class="ui divider"></div>
-          </div><br>
+          <!-- <div class="eight wide column">
 
-          <div class="eight wide column">
+          </div><br> -->
+
+          <div class="eight wide column" id="bottom">
+            <div class="ui divider"></div>
             {{> commentform}}
           </div>
+
 
     </div>
 
