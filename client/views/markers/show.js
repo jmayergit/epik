@@ -1,5 +1,9 @@
 Template.markershow.rendered = function(){
     // var top = CommentsCollection.find({marker_id: this._id}).count();
+    console.log('This..');
+    console.log(this);
+    console.log('This.data...');
+    console.log(this.data);
     var marker_id = this.data._id;
     console.log('Marker ID: ' + marker_id);
     var commentNum = CommentsCollection.find({marker_id: marker_id}).count();
