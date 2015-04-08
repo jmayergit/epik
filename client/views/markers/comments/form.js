@@ -4,7 +4,7 @@ Template.commentform.events({
     // $('#bottom').animate({
     //   top: "+=30"
     // }, 500, function() {})
-    $('#bottom').css('top','+=30');
+    // $('#bottom').css('top','+=30');
 
 
     // can't access this.params inside events :(

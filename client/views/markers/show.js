@@ -25,7 +25,10 @@ Template.markershow.events({
   'change #bottom': function(event, template){
     console.log('change');
     console.log(event.currentTarget);
-    $(event.currentTarget).css('top','+=15')
+    $(event.currentTarget).animate({
+      top: "+=30"
+    }, 500, function() {})
+
   },
 
   'click i.thumbs.up.icon': function(event, template){
