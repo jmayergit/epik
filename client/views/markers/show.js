@@ -1,17 +1,17 @@
 Template.markershow.rendered = function(){
-    var baseUri = this.firstNode.baseURI;
-    var reID = /[a-zA-Z0-9]{15,25}/;
-    var marker_id = baseUri.match(reID)[0];
+    // var baseUri = this.firstNode.baseURI;
+    // var reID = /[a-zA-Z0-9]{15,25}/;
+    // var marker_id = baseUri.match(reID)[0];
+    // //
     //
-
-    console.log(marker_id);
-    Meteor.call('getCommentNum', marker_id, function(error, result){
-      console.log('INSIDE METEOR METHOD CALL');
-      console.log(error);
-      console.log(result);
-      var spacing = result * 30;
-      $('#bottom').css('top','+=' + spacing);
-    });
+    // console.log(marker_id);
+    // Meteor.call('getCommentNum', marker_id, function(error, result){
+    //   console.log('INSIDE METEOR METHOD CALL');
+    //   console.log(error);
+    //   console.log(result);
+    //   var spacing = result * 30;
+    //   $('#bottom').css('top','+=' + spacing);
+    // });
 
 }
 
@@ -23,11 +23,11 @@ Template.markershow.helpers({
 
 Template.markershow.events({
   'change #bottom': function(event, template){
-    console.log('change');
-    console.log(event.currentTarget);
-    $(event.currentTarget).animate({
-      top: "+=30"
-    }, 500, function() {})
+    // console.log('change');
+    // console.log(event.currentTarget);
+    // $(event.currentTarget).animate({
+    //   top: CommentsCollection.find({marker_id:this._id})
+    // }, 500, function() {})
 
   },
 
@@ -46,7 +46,7 @@ Template.markershow.events({
       return true;
     };
 
-    if( clientSideCheck(id, ids) ){
+    if( clientSideCheck(Meteor.userId(), ids) ){
       MarkersCollection.update({_id: this._id}, {$inc: {'likes.num':1}}, function(error, num){
         if( num ){
           MarkersCollection.update({_id: _this._id}, {$push: {'likes.ids': Meteor.userId()}}, function(error, num){
