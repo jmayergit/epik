@@ -23,3 +23,20 @@ MarkersCollection.find().observe({
   },
 
 });
+
+CommentsCollection.find().observe({
+  added: function(document){
+    // console.log('Added');
+    // console.log(document);
+  },
+
+  changed: function(document){
+    // console.log('Changed');
+    // console.log(document);
+  },
+
+  removed: function(document){
+    // console.log('Removed');
+    // console.log(document);
+  }
+})

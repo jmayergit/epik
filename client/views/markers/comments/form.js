@@ -1,9 +1,10 @@
 Template.commentform.events({
   'submit .ui.form': function(event, template) {
     event.preventDefault();
-    $('#bottom').animate({
-      top: "+=30"
-    }, 500, function() {})
+    // $('#bottom').animate({
+    //   top: "+=30"
+    // }, 500, function() {})
+    $('#bottom').css('top','+=30');
 
 
     // can't access this.params inside events :(

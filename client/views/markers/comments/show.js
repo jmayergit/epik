@@ -8,10 +8,11 @@ Template.commentshow.events({
     }
     if( clientSideCheck(commentUserId, userId) ){
       if( CommentsCollection.remove({_id: this._id}) ) {
-        
-        $('#bottom').animate({
-         top: "-=30"
-        }, 500, function() {});
+
+        // $('#bottom').animate({
+        //  top: "-=30"
+        // }, 500, function() {});
+        $('#bottom').css('top','-=30')
       }else {
         // console.log('Access denied. Your ID is ' + Meteor.userId() + "which does not match the comment owner's ID of " + this.user_id );
       }
