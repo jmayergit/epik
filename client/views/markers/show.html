@@ -5,10 +5,31 @@
 
     <div class="sixteen wide column center aligned">
 
-        <h3>{{this.properties.title}} | {{this.properties.description}} | {{this.countdown}} minutes | {{this.likes.num}} likes - <i class="thumbs up icon"></i></h3>
-
+      <div class="ui segment">
 
         {{> markerimageshow }}
+
+        <div class="ui visible message">
+
+
+              {{this.properties.title}} | {{this.properties.description}} |
+
+
+
+
+              {{this.countdown}} minutes  | {{this.likes.num}} likes  <i class="thumbs up icon"></i>
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
 
 
     </div>
@@ -19,6 +40,12 @@
 
           <div class="eight wide column left aligned" id="top">
 
+            <br>
+
+            <div class="ui comments">
+              <h3 class="ui dividing header">Comments</h3>
+
+
                 {{#each comments}}
 
 
@@ -28,6 +55,8 @@
 
 
                 {{/each}}
+
+              </div>
 
           </div><br>
 

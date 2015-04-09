@@ -19,6 +19,10 @@ Template.commentform.events({
     var comment = event.target[0].value
     var marker_id = getMarkerID();
     var user_id = Meteor.userId();
+    var email = Meteor.users.findOne().emails[0].address;
+    var re = /[a-zA-Z0-9]+/
+    var username = email.match(re)[0];
+    console.log(username);
 
     var comment_id = CommentsCollection.insert({
       comment: comment,
@@ -30,7 +34,9 @@ Template.commentform.events({
       likes: {
         num: 0,
         ids: []
-      }
+      },
+
+      username: username
     })
 
     // MarkersCollection.update({_id: marker_id}, {$push: {'comments': comment_id}});
