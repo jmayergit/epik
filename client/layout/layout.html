@@ -37,6 +37,8 @@
 
             {{#if currentUser }}
               {{> yield}}
+            {{else}}
+              {{> prompt}}
             {{/if}}
 
 
