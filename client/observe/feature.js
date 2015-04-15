@@ -12,11 +12,11 @@ function updateMap() {
 MarkersCollection.find().observe({
   added: function(document) {
     updateMap();
-    // console.log("ADDED");
+    console.log("ADDED");
   },
   changed: function(newdoc, olddoc) {
     updateMap();
-    // console.log("CHANGED");
+    console.log("CHANGED");
   },
   removed: function(olddoc) {
     updateMap();

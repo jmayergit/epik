@@ -30,8 +30,7 @@ Template.markerform.events({
           type: "Feature",
           geometry: {
             type: "Point",
-            coordinates: [-73.5878100
-,45.5088400]
+            coordinates: Session.get('user_location')
           },
 
           properties: {
