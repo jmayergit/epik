@@ -13,7 +13,7 @@
                   {{#if currentUser}}
 
                     <div class="item">
-                      <a href="{{pathFor route="home"}}">Map</a>
+                      <a href="{{pathFor route="map"}}">Map</a>
                     </div>
 
                     <div class="ui simple dropdown item">
@@ -39,11 +39,7 @@
 
 
 
-            {{#if currentUser }}
-              {{> yield}}
-            {{else}}
-              {{> prompt}}
-            {{/if}}
+            {{> yield}}
 
 
 
