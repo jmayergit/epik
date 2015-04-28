@@ -1,7 +1,7 @@
 Template.layout.helpers({
   dummy: function(){
     return Meteor.userId() == "EGy2KuTmz7gn9bx5g";
-  };
+  }
 });
 
 Template.layout.events({
@@ -10,5 +10,5 @@ Template.layout.events({
       console.log('Error: ' + error);
       console.log('Result: ' + result);
     });
-  };
+  }
 })
