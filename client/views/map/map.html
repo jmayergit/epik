@@ -41,26 +41,37 @@
     markerLayer.setGeoJSON(geoJsonArr);
 
     // add simulate friends button and event listener for dummy account
-    // if( Meteor.userId() == "EGy2KuTmz7gn9bx5g" ) {
-      setTimeout(function(){
-        var button = document.createElement('button');
-        button.id = "simulate";
-        button.innerText = "Simulate Friends";
-        $(button).css('left',(window.innerWidth/2));
-        $(button).css('bottom',(window.innerHeight/2));
-        document.body.appendChild(button);
-        $('#map').css('opacity',0.3);
-        $('#simulate').on('click',function(){
-          Meteor.call("simulateFriends", function(error, result){
-            if(result){
-              $('#map').css('opacity',1);
-              document.body.removeChild(button);
-            }
-          });
-        })
-      },3000);
+    if( Meteor.userId() == "EGy2KuTmz7gn9bx5g" ) {
+      var button = document.createElement('button');
+      button.id = "simulate";
+      button.innerText = "Simulate Friends";
 
-    // }
+            $('#map').on('mouseenter',function(){
+              setTimeout(function(){
+                if(MarkersCollection.find().count() == 0){
+                  $(button).css('left',(window.innerWidth/2));
+                  $(button).css('bottom',(window.innerHeight/2));
+                  document.body.appendChild(button);
+                  $('#map').css('opacity',0.3);
+                  $('#simulate').on('click',function(){
+                    Meteor.call("simulateFriends", function(error, result){
+                      if(result){
+                        $('#map').css('opacity',1);
+                        document.body.removeChild(button);
+                      }
+                    });
+                  })
+                }
+              },1500)
+            })
+
+            $('#map').on('mouseleave',function(e){
+              if(e.toElement.id !== 'simulate'){
+                $('#map').css('opacity',1);
+                document.body.removeChild(button);
+              }
+            });
+    };
 
   </script>
 </template>
