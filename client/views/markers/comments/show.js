@@ -19,7 +19,7 @@ Template.commentshow.events({
     }
   },
 
-  'click .like.icon': function(event, template) {
+  'click .thumbs.up.icon': function(event, template) {
     var _this = this;
     var ids = this.likes.ids;
 
