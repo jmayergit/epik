@@ -9,10 +9,19 @@ input {
   background-repeat: no-repeat;
 }
 
-#simulate{
+#simulate {
   position: absolute;
   z-index: 15;
 }
+
+#map {
+  opacity: 1;
+  -webkit-transition-property: width, height;
+  -webkit-transition-duration: 1s;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
 .comment {
   padding-top: 10px;
   padding-left: 5px;

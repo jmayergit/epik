@@ -45,10 +45,12 @@
       var button = document.createElement('button');
       button.id = "simulate";
       button.innerText = "Simulate Friends";
+      var inside = false;
 
             $('#map').on('mouseenter',function(){
+              inside = true;
               setTimeout(function(){
-                if(MarkersCollection.find().count() == 0){
+                if(MarkersCollection.find().count() == 0 && inside == true){
                   $(button).css('left',(window.innerWidth/2));
                   $(button).css('bottom',(window.innerHeight/2));
                   document.body.appendChild(button);
@@ -63,13 +65,20 @@
                   })
                 }
               },1500)
-            })
+            });
 
             $('#map').on('mouseleave',function(e){
+              inside = false;
               if(e.toElement.id !== 'simulate'){
                 $('#map').css('opacity',1);
                 document.body.removeChild(button);
               }
+            });
+
+            $('.ui.inverted.menu').on('mouseenter',function(){
+              inside = false;
+              document.body.removeChild(button);
+              $('#map').css('opacity',1);
             });
     };
 
