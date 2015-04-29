@@ -2,6 +2,21 @@ input {
   color: black;
 }
 
+.description {
+  font-size: 20px;
+  font-weight: 700px;
+}
+
+#layout {
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  background-image: url("http://i.ytimg.com/vi/ap_osa6PhG4/maxresdefault.jpg");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 #demo {
   width: 640px;
   height: 440px;

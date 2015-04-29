@@ -1,4 +1,8 @@
 Template.markerform.helpers({
+  about: function(){
+    console.log(this);
+    return true;
+  }
 })
 
 Template.markerform.events({
