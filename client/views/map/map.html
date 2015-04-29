@@ -41,7 +41,7 @@
     markerLayer.setGeoJSON(geoJsonArr);
 
     // add simulate friends button and event listener for dummy account
-    if( Meteor.userId() == "EGy2KuTmz7gn9bx5g" ) {
+    // if( Meteor.userId() == "EGy2KuTmz7gn9bx5g" ) {
       var button = document.createElement('button');
       button.id = "simulate";
       button.innerText = "Simulate Friends";
@@ -51,8 +51,8 @@
               inside = true;
               setTimeout(function(){
                 if(MarkersCollection.find().count() == 0 && inside == true){
-                  $(button).css('left',(window.innerWidth/2));
-                  $(button).css('bottom',(window.innerHeight/2));
+                  $(button).css('left', ((window.innerWidth/2) - (115/2)) );
+                  $(button).css('bottom',((window.innerHeight/2) - (24/2)) );
                   document.body.appendChild(button);
                   $('#map').css('opacity',0.3);
                   $('#simulate').on('click',function(){
@@ -80,7 +80,7 @@
               document.body.removeChild(button);
               $('#map').css('opacity',1);
             });
-    };
+    // };
 
   </script>
 </template>
