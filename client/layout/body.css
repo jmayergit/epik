@@ -158,7 +158,8 @@ i.icon.remove.circle:before {
 
 #marker-img {
   border-style: solid;
-  height: 400px;
+  height: auto;
+  max-width: 100%;
   border-width: 1px;
 }
 
