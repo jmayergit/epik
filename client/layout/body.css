@@ -38,6 +38,20 @@ input {
   transition-duration: 1s;
 }
 
+.popup {
+  border-radius: 0.2rem;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+}
+
+#popup-img {
+  height: auto;
+  max-width: 100%;
+}
+
 #imageAndMessage {
   padding-left: 20%;
   padding-right: 20%;

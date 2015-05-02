@@ -1,5 +1,16 @@
 Meteor.startup( function() {
 
+  console.log('clearing images..');
+  var ids = []
+  Images.find().forEach(function(image){
+    ids.push(image._id)
+  });
+  var length = ids.length
+  for(var i = 0; i < length; i++){
+    Images.remove({_id:ids[i]});
+  };
+  console.log('Images cleared.');
+
   var colors = ["#FF0000","#FF0080","#E600FF","#5D00FF","#0033FF","#00E1FF","#00E1FF","#00FF1E","#99FF00","#FFBB00"]
 
   Meteor.setInterval( function() {
