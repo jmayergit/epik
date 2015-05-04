@@ -1,5 +1,14 @@
 <template name="commentshow">
-  <div class="comment">
-    <i class="remove circle icon"> </i> <span id="comment">{{comment}}</span> <span id="likes">{{likes.num}} <i class="thumbs up icon"> </i></span> 
+  <!-- <div class="comment">
+    <i class="remove circle icon"> </i> <span id="comment">{{comment}}</span> <span id="likes">{{likes.num}} <i class="thumbs up icon"> </i></span><br><br>
+    {{username}}
+  </div> -->
+  <div class="eight wide column">
+    <div class="row">
+      {{username}} <span id="likes">{{likes.num}} <i class="thumbs up icon"> </i></span> <i class="remove circle icon"> </i>
+    </div>
+    <div class="row" id="info">
+      <span id="comment">{{comment}}</span>
+    </div>
   </div>
 </template>

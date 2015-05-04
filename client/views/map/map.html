@@ -41,7 +41,6 @@
     markerLayer.setGeoJSON(geoJsonArr);
 
     // add simulate friends button and event listener for dummy account
-    if( Meteor.userId() == "EGy2KuTmz7gn9bx5g" ) {
       var button = document.createElement('button');
       button.id = "simulate";
       button.innerText = "Simulate Friends";
@@ -82,39 +81,38 @@
               document.body.removeChild(button);
               $('#map').css('opacity',1);
             });
-    };
 
 
-    $('img.leaflet-marker-icon').on('mouseenter',function(event){
-      var popupDiv = document.createElement('div');
-      popupDiv.className = 'popup';
-      var title = event.currentTarget.title;
-      popupDiv.id = 'popup' + title;
-      console.log(event);
-      MarkersCollection.find().forEach(function(marker){
-        if( marker.properties.title === title ){
-          console.log('matching titles');
-          console.log('photo_id:' + marker.photo_id);
-          var image = Images.findOne({_id:marker.photo_id});
-          image.id = "popup-img";
-          console.log('markers image:' + image);
-          var imageTag = document.createElement('img');
-          imageTag.id = 'popup-img';
-          imageTag.src = image.url();
-          popupDiv.appendChild(imageTag);
-          console.log('Adding popup to map');
-          document.body.appendChild(popupDiv);
-        }
-      });
-    });
-
-    $('img.leaflet-marker-icon').on('mouseleave', function(event){
-      var id = '#popup' + event.fromElement.title;
-      console.log(id);
-      var previous = $(id)[0];
-      document.body.removeChild(previous);
-      console.log(event);
-    })
+    // $('.leaflet-marker-pane').on('mouseover','img.leaflet-marker-icon',function(event){
+    //   var popupDiv = document.createElement('div');
+    //   popupDiv.className = 'popup';
+    //   var title = event.currentTarget.title;
+    //   popupDiv.id = 'popup' + title;
+    //   console.log(event);
+    //   MarkersCollection.find().forEach(function(marker){
+    //     if( marker.properties.title === title ){
+    //       console.log('matching titles');
+    //       console.log('photo_id:' + marker.photo_id);
+    //       var image = Images.findOne({_id:marker.photo_id});
+    //       image.id = "popup-img";
+    //       console.log('markers image:' + image);
+    //       var imageTag = document.createElement('img');
+    //       imageTag.id = 'popup-img';
+    //       imageTag.src = image.url();
+    //       popupDiv.appendChild(imageTag);
+    //       console.log('Adding popup to map');
+    //       document.body.appendChild(popupDiv);
+    //     }
+    //   });
+    // });
+    //
+    // $('img').on('mouseleave','leaflet-marker-icon', function(event){
+    //   var id = '#popup' + event.fromElement.title;
+    //   console.log(id);
+    //   var previous = $(id)[0];
+    //   document.body.removeChild(previous);
+    //   console.log(event);
+    // })
 
   </script>
 </template>

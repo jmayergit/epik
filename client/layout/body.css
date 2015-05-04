@@ -95,6 +95,10 @@ input {
   border-width: thick;
 }
 
+#info{
+  padding-top: 10px;
+}
+
 i.icon.remove.circle:before {
   content: "\f057";
   color: red;
