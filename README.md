@@ -1,19 +1,13 @@
-Maptiles may load slow over slow connections.
 
-Title and Description as well as a photo upload are required to create an epic.
+  Meteor Application
 
-On hover markers display Title and Description, on click marker redirects to show page. ( Hover currently isn't enabled
-for mobile )
+  MapBox
 
-Your uploads are temporary this is a core feature of epik and promotes an environment for quick and honest discussion.
+  Iron Router
 
-Get out there and share your story!
+  Place for friends to upload images to a shared map
 
-___________      .__ __
-\_   _____/_____ |__|  | __
- |    __)_\____ \|  |  |/ /
- |        \  |_> >  |    <
-/_______  /   __/|__|__|_ \
-        \/|__|           \/
+  Your friends can see where you are and send message instantly
 
-# epik
+  Images and the conversations surrounding them last only a brief period of time. This encourages
+  genuine conversation since they are impermanent.
